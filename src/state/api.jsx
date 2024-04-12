@@ -24,12 +24,18 @@ export const api = createApi({
     createClientaccount: build.mutation({
       query: (postData) => ({
         url: `client/insertAccount`,
-        method: POST,
+        method: 'POST',
         body: postData
+      })
+    }),
+    deleteClientAccount: build.mutation({
+      query: (id) => ({
+        url: `client/deleteAccount/${id}`,
+        method: 'DELETE'
       })
     })
   })
 });
 
-export const { useGetUserQuery, useGetCustomerQuery, useGetProductQuery, useGetClientaccountQuery, useCreateClientaccountMutation } = api;
+export const { useGetUserQuery, useGetCustomerQuery, useGetProductQuery, useGetClientaccountQuery, useCreateClientaccountMutation, useDeleteClientAccountMutation } = api;
 //export const { useGetUserQuery, useGetCustomerQuery, useGetProductQuery, useGetClientaccountQuery, useInsertCustomerMutation } = api;

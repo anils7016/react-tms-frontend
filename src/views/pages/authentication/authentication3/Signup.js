@@ -1,23 +1,24 @@
 import { Link } from 'react-router-dom';
 
 // material-ui
-import { useTheme } from '@mui/material/styles';
-import { Divider, Grid, Stack, Typography, useMediaQuery } from '@mui/material';
+//import { useTheme } from '@mui/material/styles';
+import { Divider, Grid, Typography } from '@mui/material';
 
 // project imports
 import AuthWrapper1 from '../AuthWrapper1';
 import AuthCardWrapper from '../AuthCardWrapper';
 import Logo from 'ui-component/Logo';
-import AuthRegister from '../auth-forms/AuthRegister';
+//import AuthRegister from '../auth-forms/AuthRegister';
+import AuthSignup from '../auth-forms/AuthSignup';
 import AuthFooter from 'ui-component/cards/AuthFooter';
 
 // assets
 
 // ===============================|| AUTH3 - REGISTER ||=============================== //
 
-const Register = () => {
-  const theme = useTheme();
-  const matchDownSM = useMediaQuery(theme.breakpoints.down('md'));
+const Signup = () => {
+  //const theme = useTheme();
+  //const matchDownSM = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <AuthWrapper1>
@@ -33,28 +34,14 @@ const Register = () => {
                     </Link>
                   </Grid>
                   <Grid item xs={12}>
-                    <Grid container direction={matchDownSM ? 'column-reverse' : 'row'} alignItems="center" justifyContent="center">
-                      <Grid item>
-                        <Stack alignItems="center" justifyContent="center" spacing={1}>
-                          <Typography color={theme.palette.secondary.main} gutterBottom variant={matchDownSM ? 'h3' : 'h2'}>
-                            Sign up
-                          </Typography>
-                          <Typography variant="caption" fontSize="16px" textAlign={matchDownSM ? 'center' : 'inherit'}>
-                            Enter your credentials to continue
-                          </Typography>
-                        </Stack>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <AuthRegister />
+                    <AuthSignup />
                   </Grid>
                   <Grid item xs={12}>
                     <Divider />
                   </Grid>
                   <Grid item xs={12}>
                     <Grid item container direction="column" alignItems="center" xs={12}>
-                      <Typography component={Link} to="/pages/login/signin" variant="subtitle1" sx={{ textDecoration: 'none' }}>
+                      <Typography component={Link} to="/pages/login/login3" variant="subtitle1" sx={{ textDecoration: 'none' }}>
                         Already have an account?
                       </Typography>
                     </Grid>
@@ -72,4 +59,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Signup;
