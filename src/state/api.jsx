@@ -17,6 +17,16 @@ export const api = createApi({
       query: () => `client/products`,
       providesTags: ['products']
     }),
+    createInternaluser: build.mutation({
+      query: (postData) => ({
+        url: `client/insertAccount`,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+        body: postData
+      })
+    }),
     getClientaccount: build.query({
       query: () => `client/clientaccounts`,
       providesTags: ['Clientaccounts']

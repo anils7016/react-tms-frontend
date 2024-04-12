@@ -8,7 +8,7 @@ import { useDeleteClientAccountMutation, useGetClientaccountQuery } from 'state/
 import Pageheader from 'ui-component/Pageheader';
 
 const ClientAccounts = () => {
-  const apiurl = process.env.REACT_APP_BASE_URL;
+  const apiurl = process.env.APP_BASE_URL;
   //const alldata = useGetClientaccountQuery()
   const { data, isLoading } = useGetClientaccountQuery();
 

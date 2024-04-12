@@ -76,7 +76,7 @@ const FirebaseRegister = ({ ...others }) => {
     console.log('values', values)
     try{
       console.log('testinggg', values)
-      await axios.post('http://localhost:5001/user/signUp', values);
+      await axios.post(`${process.env.APP_BASE_URL}/user/signUp`, values);
     }catch(error){
       console.log('error', error)
     }
